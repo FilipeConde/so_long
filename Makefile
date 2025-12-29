@@ -14,6 +14,12 @@ so_long: $(C_FILES) libft/libft.a
 libft/libft.a:
 	@make -C libft/
 
+%.o: %.c
+	$(CC) -Wall -Wextra -Werror -I/usr/include -Iminilibx-linux -O3 -c $< -o $@
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Lminilibx-linux -lminilibx-linux -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz -o $(NAME)
+
 clean:
 	@make -C libft/ clean
 
