@@ -2,3 +2,5 @@
 *.a
 .vscode
 so_long
+*.gen
+mlx-test
