@@ -23,9 +23,10 @@ libmlx42:
 
 clean:
 	@make -C $(LIBFT_DIR) clean
+	make -C $(LIBMLX_DIR)/build clean
 
 fclean: clean
 	@rm -rf $(TARGETS)
-	@make -C $(LIBFT_DIR) fclean
+	@rm -rf $(LIBMLX_DIR)/build
 
 re: fclean all
