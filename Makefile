@@ -10,14 +10,14 @@ LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \
 				-ldl -lglfw -pthread -lm
 HEADERS		= -I . \
-				-I $(LIBMLX_DIR)/include \
+				-I $(LIBMLX_DIR)/include/MLX42 \
 				-I $(LIBFT_DIR)
 TARGETS 	= so_long
 
 all: $(TARGETS)
 
 $(TARGETS): $(C_FILES) libft libmlx42
-	@$(CC) $(CFLAGS) $(C_FILES) $(LIBS) $(HEADERS) -o $@
+	@$(CC) $(CFLAGS) $(C_FILES) $(HEADERS) $(LIBS) -o $@
 	@echo "==> so_long successfully compiled!"
 
 libft:
