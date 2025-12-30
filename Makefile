@@ -1,6 +1,6 @@
 
 CC			= cc
-CFLAGS		= -g3 -Wextra -Werror -Wall -I.
+CFLAGS		= -g3 -Wextra -Werror -Wall -I. -Wunreachable-code -Ofast
 LIBFT_DIR	= ./lib/libft
 LIBFT		= libft.a
 LIBMLX_DIR	= ./lib/MLX42
@@ -12,10 +12,10 @@ TARGETS 	= so_long
 
 all: $(TARGETS)
 
-$(TARGETS): $(C_FILES) $(LIBFT_DIR)/$(LIBFT) libmlx42
-	@$(CC) $(CFLAGS) $(C_FILES) -L$(LIBFT_DIR) -lft -o $@
+$(TARGETS): $(C_FILES) libft libmlx42
+	@$(CC) $(CFLAGS) $(C_FILES) -L$(LIBFT_DIR) -lft -L$(LIBMLX_DIR)/build -lmlx42 -ldl -lglfw -pthread -lm -o $@
 
-$(LIBFT_DIR)/$(LIBFT):
+libft:
 	@make -C $(LIBFT_DIR)
 
 libmlx42:
