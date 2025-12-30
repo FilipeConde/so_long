@@ -5,28 +5,39 @@ LIBFT_DIR	= ./lib/libft
 LIBFT		= libft.a
 LIBMLX_DIR	= ./lib/MLX42
 LIBMLX		= libmlx42.a
-C_FILES 	= so_long.c
-
-HEADERS 	= so_long.h
+C_FILES		= so_long.c
+LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
+				$(LIBFT_DIR)/$(LIBFT) \
+				-ldl -lglfw -pthread -lm
+HEADERS		= -I . \
+				-I $(LIBMLX_DIR)/include \
+				-I $(LIBFT_DIR)
 TARGETS 	= so_long
 
 all: $(TARGETS)
 
 $(TARGETS): $(C_FILES) libft libmlx42
-	@$(CC) $(CFLAGS) $(C_FILES) -L$(LIBFT_DIR) -lft -L$(LIBMLX_DIR)/build -lmlx42 -ldl -lglfw -pthread -lm -o $@
+	@$(CC) $(CFLAGS) $(C_FILES) $(LIBS) $(HEADERS) -o $@
+	@echo "==> so_long successfully compiled!"
 
 libft:
 	@make -C $(LIBFT_DIR)
+	@echo "==> libft successfully created!"
 
 libmlx42:
 	@cmake $(LIBMLX_DIR) -B $(LIBMLX_DIR)/build && make -C $(LIBMLX_DIR)/build -j4
+	@echo "==> libmlx42 successfully created!"
 
 clean:
 	@make -C $(LIBFT_DIR) clean
 	make -C $(LIBMLX_DIR)/build clean
+	@echo "==> Simple clean done!"
+
 
 fclean: clean
 	@rm -rf $(TARGETS)
 	@rm -rf $(LIBMLX_DIR)/build
+	@echo "==> Full clean done!"
+
 
 re: fclean all
