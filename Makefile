@@ -16,6 +16,10 @@ TARGETS 	= so_long
 
 all: $(TARGETS)
 
+DEMO: DEMO.c libft libmlx42
+	@$(CC) $(CFLAGS) DEMO.c $(HEADERS) $(LIBS) -o $@
+	@echo "==> so_long successfully compiled!"
+
 $(TARGETS): $(C_FILES) libft libmlx42
 	@$(CC) $(CFLAGS) $(C_FILES) $(HEADERS) $(LIBS) -o $@
 	@echo "==> so_long successfully compiled!"
@@ -29,6 +33,7 @@ libmlx42:
 	@echo "==> libmlx42 successfully created!"
 
 clean:
+	@rm -rf DEMO
 	@make -C $(LIBFT_DIR) clean
 	make -C $(LIBMLX_DIR)/build clean
 	@echo "==> Simple clean done!"
@@ -36,6 +41,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(TARGETS)
+	@rm -rf DEMO
 	@rm -rf $(LIBMLX_DIR)/build
 	@echo "==> Full clean done!"
 

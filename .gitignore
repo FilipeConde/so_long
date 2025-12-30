@@ -5,3 +5,4 @@ so_long
 *.gen
 mlx-test
 /lib/MLX42/build
+DEMO.c
