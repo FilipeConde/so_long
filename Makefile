@@ -1,24 +1,27 @@
 
-CC = cc
-CFLAGS = -g3 -Wextra -Werror -Wall -I.
-C_FILES = so_long.c
+CC			= cc
+CFLAGS		= -g3 -Wextra -Werror -Wall -I.
+LIBFT_DIR	= ./lib/libft
+LIBFT		= libft.a
+LIBMLX		= ./lib/MLX42
+C_FILES 	= so_long.c
 
-HEADERS = so_long.h
-TARGETS = so_long
+HEADERS 	= so_long.h
+TARGETS 	= so_long
 
 all: $(TARGETS)
 
-so_long: $(C_FILES) libft/libft.a
-	@$(CC) $(CFLAGS) $^ -Llibft -lft -o $@
+$(TARGETS): $(C_FILES) $(LIBFT_DIR)/$(LIBFT)
+	@$(CC) $(CFLAGS) $(C_FILES) -L$(LIBFT_DIR) -lft -o $@
 
-libft/libft.a:
-	@make -C libft/
+$(LIBFT_DIR)/$(LIBFT):
+	@make -C $(LIBFT_DIR)
 
 clean:
-	@make -C libft/ clean
+	@make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	@rm -rf $(TARGETS)
-	@make -C libft/ fclean
+	@make -C $(LIBFT_DIR) fclean
 
 re: fclean all
