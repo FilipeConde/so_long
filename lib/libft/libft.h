@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/12/14 10:17:22 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/03 13:31:39 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ typedef struct s_list
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
+
+# ifndef GNL_BUFFER_SIZE
+#  define GNL_BUFFER_SIZE 42
+# endif
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
