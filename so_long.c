@@ -6,14 +6,35 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/12/30 16:07:31 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:14:18 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	main(void)
+// code as hell!!!
+int	main(int argc, char **argv)
 {
-	// code as hell!!!
+	int		fd;
+	char	*gnl;
+
+	if (argc > 1)
+	{
+		fd = open(argv[1], O_RDONLY);
+		gnl = get_next_line(fd);
+		ft_printf("%s", gnl);
+		while (gnl)
+		{
+			gnl = get_next_line(fd);
+			if (!gnl)
+			{
+				free(gnl);
+				break ;
+			}
+			ft_printf("%s", gnl);
+			if (gnl)
+				free(gnl);
+		}
+		close(fd);
+	}
 	return (EXIT_SUCCESS);
 }

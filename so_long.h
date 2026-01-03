@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/12/30 14:15:09 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:08:13 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include "lib/MLX42/include/MLX42/MLX42.h"
 # include "libft.h"
-
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
 // add functions definitions
 
 #endif
