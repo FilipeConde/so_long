@@ -42,6 +42,7 @@ clean:
 fclean: clean
 	@rm -rf $(TARGETS)
 	@rm -rf DEMO
+	@make -C $(LIBFT_DIR) fclean
 	@rm -rf $(LIBMLX_DIR)/build
 	@echo "==> Full clean done!"
 
