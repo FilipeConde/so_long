@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 17:48:25 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/04 18:08:11 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,35 @@ static int	is_closed(char **map)
 	return (EXIT_SUCCESS);
 }
 
+static int	has_entity(char **map, char ent)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == ent)
+				return (EXIT_SUCCESS);
+			j++;
+		}
+		i++;
+	}
+	return (EXIT_FAILURE);
+}
+
 int	map_checker(char **map)
 {
 	if (is_rectangle(map) != 0)
 		return (EXIT_FAILURE);
 	if (is_closed(map) != 0)
 		return (EXIT_FAILURE);
-	// has_entities(**map);
+	if (has_entity(map, 'P') != 0 || has_entity(map, 'C') != 0 ||
+			has_entity(map, 'E') != 0)
+		return (EXIT_FAILURE);
 
 	return (EXIT_SUCCESS);
 }
