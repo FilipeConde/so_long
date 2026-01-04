@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 20:10:51 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/03 21:00:29 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/04 14:04:52 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	*trim_newline(char *line)
 	return (line);
 }
 
-static int	count_lines(char *path)
+static int	count_file_lines(char *path)
 {
 	int		fd;
 	int		count;
@@ -59,7 +59,7 @@ char	**read_map(char *path)
 	int		fd;
 	int		i;
 
-	line_count = count_lines(path);
+	line_count = count_file_lines(path);
 	if (line_count <= 0)
 		return (NULL);
 	map = ft_calloc(sizeof(char *), line_count + 1);
