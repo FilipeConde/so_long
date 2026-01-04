@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 14:27:33 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/04 19:34:02 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,19 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+
+typedef struct s_board
+{
+	char	**map;
+	int		width;
+	int		height;
+	int		p_x;
+	int		p_y;
+	int		e_x;
+	int		e_y;
+	int		c_qty;
+}	t_board;
+
 // add functions definitions
 char	**read_map(char *path);
 int		map_checker(char **map);
