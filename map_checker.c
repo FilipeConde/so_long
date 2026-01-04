@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 18:08:11 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/04 18:23:33 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ static int	has_entity(char **map, char ent)
 {
 	int	i;
 	int	j;
+	int	count;
 
+	count = 0;
 	i = 0;
 	while (map[i])
 	{
@@ -76,12 +78,17 @@ static int	has_entity(char **map, char ent)
 		while (map[i][j])
 		{
 			if (map[i][j] == ent)
-				return (EXIT_SUCCESS);
+				count++;
 			j++;
 		}
 		i++;
 	}
-	return (EXIT_FAILURE);
+	if (count == 0)
+		return (EXIT_FAILURE);
+	if ((ent == 'P' || ent == 'E') && count > 1)
+		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
+
 }
 
 int	map_checker(char **map)
