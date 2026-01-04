@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/03 15:08:13 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/03 20:48:40 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 #include <fcntl.h>
 #include <stdlib.h>
 // add functions definitions
+char	**read_map(char *path);
 
 #endif

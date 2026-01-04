@@ -5,13 +5,17 @@ LIBFT_DIR	= ./lib/libft
 LIBFT		= libft.a
 LIBMLX_DIR	= ./lib/MLX42
 LIBMLX		= libmlx42.a
-C_FILES		= so_long.c
+C_FILES		= so_long.c \
+				read_map.c
+
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \
 				-ldl -lglfw -pthread -lm
+
 HEADERS		= -I . \
 				-I $(LIBMLX_DIR)/include/MLX42 \
 				-I $(LIBFT_DIR)
+
 TARGETS 	= so_long
 
 all: $(TARGETS)
