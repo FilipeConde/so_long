@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   set_board.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 20:57:49 by fconde-p         ###   ########.fr       */
+/*   Created: 2026/01/04 20:34:42 by fconde-p          #+#    #+#             */
+/*   Updated: 2026/01/04 20:55:03 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-// code as hell!!!
-int	main(int argc, char **argv)
+
+t_board	*set_board(char *path)
 {
 	t_board	*board;
-	int		i;
 
-	if (argc != 2)
-		return (EXIT_FAILURE);
-	board = set_board(argv[1]);
-	if (!board->map)
-	{
-		ft_printf("Erro ao ler o mapa\n");
-		return (EXIT_FAILURE);
-	}
-	i = 0;
-	while (board->map[i])
-	{
-		ft_printf("%s\n", board->map[i]);
-		i++;
-	}
-	ft_printf("%d\n", map_checker(board->map));
-	return (EXIT_SUCCESS);
+	board = ft_calloc(sizeof(t_board), 1);
+	board->map = read_map(path);
+	return (board);
 }

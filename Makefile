@@ -7,7 +7,8 @@ LIBMLX_DIR	= ./lib/MLX42
 LIBMLX		= libmlx42.a
 C_FILES		= so_long.c \
 				read_map.c \
-				map_checker.c
+				map_checker.c \
+				set_board.c
 
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \
