@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 14:31:18 by fconde-p         ###   ########.fr       */
+/*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
+/*   Updated: 2026/01/04 14:31:42 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-// code as hell!!!
-int	main(int argc, char **argv)
-{
-	char	**map;
-	int		i;
 
-	if (argc != 2)
-		return (EXIT_FAILURE);
-	map = read_map(argv[1]);
-	if (!map)
-	{
-		ft_printf("Erro ao ler o mapa\n");
-		return (EXIT_FAILURE);
-	}
+static int	is_rectangle(char **map)
+{
+	int	lines_qty;
+	int	line_size;
+	int	i;
+
+	if (!map || !*map)
+		return (-1);
+	lines_qty = 0;
+	while (map[lines_qty])
+		lines_qty++;
 	i = 0;
-	// while (map[i])
-	// {
-	// 	ft_printf("%s\n", map[i]);
-	// 	i++;
-	// }
-	ft_printf("%d\n", map_checker(map));
+	line_size = ft_strlen(map[i]);
+	while (map[i])
+	{
+		if ((int)ft_strlen(map[i]) != line_size)
+			return (EXIT_FAILURE);
+		i++;
+	}
+	
+	return (EXIT_SUCCESS);
+}
+
+int	map_checker(char **map)
+{
+	if (!is_rectangle(map))
+		return (EXIT_FAILURE);
+	// is_closed(**map);
+	// has_entities(**map);
+
 	return (EXIT_SUCCESS);
 }
