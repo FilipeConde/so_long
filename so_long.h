@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 20:55:58 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:02:36 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ typedef struct s_board
 char	**read_map(char *path);
 int		map_checker(char **map);
 t_board	*set_board(char *path);
+int		free_board(t_board *board);
 
 #endif

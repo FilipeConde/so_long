@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 21:21:00 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:02:12 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,16 @@ int	main(int argc, char **argv)
 	}
 	i = 0;
 	while (board->map[i])
-	{
-		ft_printf("%s\n", board->map[i]);
-		i++;
-	}
+	// {
+	// 	ft_printf("%s\n", board->map[i]);
+	// 	i++;
+	// }
 	ft_printf("%d\n", map_checker(board->map));
+	if (map_checker(board->map) != 0)
+	{
+		free_board(board);
+		ft_printf("Invalid board\n");
+		return (EXIT_FAILURE);
+	}
 	return (EXIT_SUCCESS);
 }
