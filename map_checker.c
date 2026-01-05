@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 20:35:18 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/05 20:48:24 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static int	is_rectangle(char **map)
 			return (EXIT_FAILURE);
 		i++;
 	}
-	
 	return (EXIT_SUCCESS);
 }
 
@@ -70,9 +69,8 @@ int	map_checker(char **map)
 		return (EXIT_FAILURE);
 	if (is_closed(map) != 0)
 		return (EXIT_FAILURE);
-	if (map_has_entity(map, 'P') != 0 || map_has_entity(map, 'C') != 0 ||
-			map_has_entity(map, 'E') != 0)
+	if (map_has_entity(map, 'P') != 0 || map_has_entity(map, 'C') != 0
+		|| map_has_entity(map, 'E') != 0)
 		return (EXIT_FAILURE);
-
 	return (EXIT_SUCCESS);
 }
