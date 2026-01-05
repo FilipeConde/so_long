@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 18:02:36 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/05 20:32:11 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	**read_map(char *path);
 int		map_checker(char **map);
 t_board	*set_board(char *path);
 int		free_board(t_board *board);
+int		map_has_entity(char **map, char ent);
 
 #endif

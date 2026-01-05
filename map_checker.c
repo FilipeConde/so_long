@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 18:23:33 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/05 20:35:18 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,41 +64,14 @@ static int	is_closed(char **map)
 	return (EXIT_SUCCESS);
 }
 
-static int	has_entity(char **map, char ent)
-{
-	int	i;
-	int	j;
-	int	count;
-
-	count = 0;
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == ent)
-				count++;
-			j++;
-		}
-		i++;
-	}
-	if (count == 0)
-		return (EXIT_FAILURE);
-	if ((ent == 'P' || ent == 'E') && count > 1)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
-
-}
-
 int	map_checker(char **map)
 {
 	if (is_rectangle(map) != 0)
 		return (EXIT_FAILURE);
 	if (is_closed(map) != 0)
 		return (EXIT_FAILURE);
-	if (has_entity(map, 'P') != 0 || has_entity(map, 'C') != 0 ||
-			has_entity(map, 'E') != 0)
+	if (map_has_entity(map, 'P') != 0 || map_has_entity(map, 'C') != 0 ||
+			map_has_entity(map, 'E') != 0)
 		return (EXIT_FAILURE);
 
 	return (EXIT_SUCCESS);
