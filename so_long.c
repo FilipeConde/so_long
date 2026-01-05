@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 20:57:49 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/04 21:21:00 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (EXIT_FAILURE);
 	board = set_board(argv[1]);
-	if (!board->map)
+	if (!board)
 	{
-		ft_printf("Erro ao ler o mapa\n");
+		ft_printf("Board setup error\n");
 		return (EXIT_FAILURE);
 	}
 	i = 0;
