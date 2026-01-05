@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:58 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 18:38:14 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:45:36 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	free_board(t_board *board)
 	}
 	free(board->map);
 	board->map = NULL;
+	free(board);
 	return (EXIT_SUCCESS);
 }
