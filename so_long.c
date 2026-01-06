@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 18:47:36 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/05 21:26:26 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	main(int argc, char **argv)
 		free(board);
 		return (EXIT_FAILURE);
 	}
+	ft_printf("QTY C: %d\n", board->c_qty);
+	ft_printf("POS P:%d %d\n", board->p_x, board->p_y);
+	ft_printf("POS E:%d %d\n", board->e_x, board->e_y);
 	i = 0;
 	// while (board->map[i])
 	// {
