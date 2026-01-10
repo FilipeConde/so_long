@@ -6,13 +6,13 @@ LIBFT		= libft.a
 LIBMLX_DIR	= ./lib/MLX42
 LIBMLX		= libmlx42.a
 C_FILES		= so_long.c \
-				read_map.c \
-				map_checker.c \
-				set_board.c \
-				free_board.c \
-				map_has_entity.c \
-				flood_fill.c \
-				free_map.c
+				src/map/read_map.c \
+				src/map/map_checker.c \
+				src/map/set_board.c \
+				src/map/free_board.c \
+				src/map/map_has_entity.c \
+				src/map/flood_fill.c \
+				src/map/free_map.c
 
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \
