@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 20:32:11 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 02:42:09 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		map_checker(char **map);
 t_board	*set_board(char *path);
 int		free_board(t_board *board);
 int		map_has_entity(char **map, char ent);
+int	flood_fill(t_board *board);
 
 #endif

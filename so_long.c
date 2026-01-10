@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 21:26:26 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 02:40:10 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,15 @@ int	main(int argc, char **argv)
 	// 	ft_printf("%s\n", board->map[i]);
 	// 	i++;
 	// }
-	ft_printf("%d\n", map_checker(board->map));
-	if (map_checker(board->map) != 0)
-	{
-		free_board(board);
-		ft_printf("Invalid board\n");
-		return (EXIT_FAILURE);
-	}
+
+	// ft_printf("%d\n", map_checker(board->map));
+	// if (map_checker(board->map) != 0)
+	// {
+	// 	free_board(board);
+	// 	ft_printf("Invalid board\n");
+	// 	return (EXIT_FAILURE);
+	// }
+	flood_fill(board);
 	free_board(board);
 	return (EXIT_SUCCESS);
 }
