@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   map_has_entity.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:31:16 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 20:31:40 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 17:15:44 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	map_has_entity(char **map, char ent)
+int	map_has_ent(char **map, char ent)
 {
 	int	i;
 	int	j;

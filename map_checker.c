@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 20:48:24 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 17:15:22 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,20 @@ static int	is_closed(char **map)
 	return (EXIT_SUCCESS);
 }
 
-int	map_checker(char **map)
+int	map_checker(t_board *board)
 {
-	if (is_rectangle(map) != 0)
+	char	**map_copy;
+
+	if (is_rectangle(board->map) != 0)
 		return (EXIT_FAILURE);
-	if (is_closed(map) != 0)
+	if (is_closed(board->map) != 0)
 		return (EXIT_FAILURE);
-	if (map_has_entity(map, 'P') != 0 || map_has_entity(map, 'C') != 0
-		|| map_has_entity(map, 'E') != 0)
+	if (map_has_ent(board->map, 'P') != 0 || map_has_ent(board->map, 'C') != 0
+		|| map_has_ent(board->map, 'E') != 0)
+		return (EXIT_FAILURE);
+	map_copy = flood_fill(board);
+	if (map_has_ent(map_copy, 'P') == 0 || map_has_ent(map_copy, 'C') == 0
+		|| map_has_ent(map_copy, 'E') == 0)
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }

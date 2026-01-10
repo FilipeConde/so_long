@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:50:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 02:46:13 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 16:30:05 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ static char	**cp_map(t_board *board)
 	char	**map_cp;
 	int		i;
 
-	// create copy of map
 	map_cp = (char **)ft_calloc(board->height + 1, sizeof(char *));
 	if (!map_cp)
 		return (NULL);
 	i = 0;
-	// start by player
 	while (i < board->height)
 	{
 		map_cp[i] = ft_strdup(board->map[i]);
@@ -38,7 +36,19 @@ static char	**cp_map(t_board *board)
 	return (map_cp);
 }
 
-int	flood_fill(t_board *board)
+void	dfs_fill(char **map, int p_x, int p_y)
+{
+	if (map[p_x][p_y] == '1')
+		return ;
+	if (map[p_x][p_y] != '1')
+		map[p_x][p_y] = '1';
+	dfs_fill(map, p_x + 1, p_y);
+	dfs_fill(map, p_x - 1, p_y);
+	dfs_fill(map, p_x, p_y + 1);
+	dfs_fill(map, p_x, p_y - 1);
+}
+
+char	**flood_fill(t_board *board)
 {
 	int	i;
 	char **map;
@@ -46,16 +56,7 @@ int	flood_fill(t_board *board)
 	map = cp_map(board);
 	i = 0;
 	if (!map)
-		return (EXIT_FAILURE);
-	while (map[i])
-	{
-		ft_printf("%s\n", map[i]);
-		i++;
-	}
-	return (EXIT_SUCCESS);
-	// check up, down, left and right
-	// if different than '1' then set to '1' and do floodfill again
-	// if '1', then go to the next
-	// at the very end, check map for entities ('P', 'C', 'E')
-	// 
+		return (NULL);
+	dfs_fill(map, board->p_x, board->p_y);
+	return (map);
 }

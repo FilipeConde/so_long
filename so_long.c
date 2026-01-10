@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 02:40:10 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 16:21:26 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	main(int argc, char **argv)
 	// 	ft_printf("Invalid board\n");
 	// 	return (EXIT_FAILURE);
 	// }
-	flood_fill(board);
 	free_board(board);
 	return (EXIT_SUCCESS);
 }

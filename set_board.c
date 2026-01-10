@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_board.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 20:34:42 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/05 21:24:11 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 17:20:10 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ t_board	*set_board(char *path)
 	search_entities_position(board, 'P');
 	search_entities_position(board, 'E');
 	count_collectables(board);
-	if (map_checker(board->map) != 0)
+	if (map_checker(board) != 0)
 	{
 		free_board(board);
 		board = NULL;
