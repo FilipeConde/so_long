@@ -12,7 +12,8 @@ C_FILES		= so_long.c \
 				src/map/free_board.c \
 				src/map/map_has_entity.c \
 				src/map/flood_fill.c \
-				src/map/free_map.c
+				src/map/free_map.c \
+				mount_window.c
 
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \

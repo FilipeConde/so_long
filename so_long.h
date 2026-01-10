@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 18:05:40 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 19:56:59 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+
+# define WIN_WIDTH 800
+# define WIN_HEIGHT 800
 
 typedef struct s_board
 {
@@ -39,5 +42,6 @@ int		free_board(t_board *board);
 int		map_has_ent(char **map, char ent);
 char	**flood_fill(t_board *board);
 int		free_map(char **map);
+int32_t	mount_window(void);
 
 #endif
