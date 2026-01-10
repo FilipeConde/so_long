@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 17:15:22 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/10 18:09:15 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,10 @@ int	map_checker(t_board *board)
 	map_copy = flood_fill(board);
 	if (map_has_ent(map_copy, 'P') == 0 || map_has_ent(map_copy, 'C') == 0
 		|| map_has_ent(map_copy, 'E') == 0)
+	{
+		free_map(map_copy);
 		return (EXIT_FAILURE);
+	}
+	free_map(map_copy);
 	return (EXIT_SUCCESS);
 }

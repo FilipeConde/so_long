@@ -11,7 +11,8 @@ C_FILES		= so_long.c \
 				set_board.c \
 				free_board.c \
 				map_has_entity.c \
-				flood_fill.c
+				flood_fill.c \
+				free_map.c
 
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \

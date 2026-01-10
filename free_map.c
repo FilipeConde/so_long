@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_board.c                                       :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 17:56:58 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 18:06:57 by fconde-p         ###   ########.fr       */
+/*   Created: 2026/01/10 18:00:40 by fconde-p          #+#    #+#             */
+/*   Updated: 2026/01/10 18:04:34 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	free_board(t_board *board)
+int	free_map(char **map)
 {
 	int	i;
 
 	i = 0;
-	if (!board || !board->map)
-		return ((EXIT_SUCCESS));
-	// while (i < board->height)
-	// {
-	// 	if (board->map[i])
-	// 	{
-	// 		free(board->map[i]);
-	// 		board->map[i] = NULL;
-	// 	}
-	// 	i++;
-	// }
-	// free(board->map);
-	// board->map = NULL;
-	free_map(board->map);
-	free(board);
+	if (!map)
+		return (EXIT_FAILURE);
+	while (map[i])
+	{
+		if (map[i])
+		{
+			free(map[i]);
+			map[i] = NULL;
+		}
+		i++;
+	}
+	free(map);
+	map = NULL;
 	return (EXIT_SUCCESS);
 }
