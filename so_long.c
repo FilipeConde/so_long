@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 19:57:39 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:04:46 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	i = 0;
-	mount_window();
+	mount_window(board);
 	free_board(board);
 	return (EXIT_SUCCESS);
 }
