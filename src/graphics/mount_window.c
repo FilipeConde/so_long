@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 19:52:54 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/11 18:54:01 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/11 19:52:23 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int32_t	mount_window(t_board *board, t_game *game)
 	// mlx_delete_image(game->mlx, img);
 	// mlx_delete_texture(texture);
 	mlx_terminate(game->mlx);
+	free(game);
 	return (EXIT_SUCCESS);
 }
