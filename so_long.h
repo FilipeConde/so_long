@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/11 15:04:37 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/11 19:00:25 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 800
-# define TILE 30
+# define TILE 64
 
 typedef struct s_board
 {
@@ -35,6 +35,17 @@ typedef struct s_board
 	int		c_qty;
 }	t_board;
 
+typedef struct s_game
+{
+	t_board		*board;
+	mlx_t		*mlx;
+	mlx_image_t	*img_p;
+	mlx_image_t	*img_c;
+	mlx_image_t	*img_e;
+	mlx_image_t	*img_f;
+	mlx_image_t	*img_w;
+}	t_game;
+
 // add functions definitions
 char	**read_map(char *path);
 int		map_checker(t_board *board);
@@ -43,6 +54,9 @@ int		free_board(t_board *board);
 int		map_has_ent(char **map, char ent);
 char	**flood_fill(t_board *board);
 int		free_map(char **map);
-int32_t	mount_window(t_board *board);
+int32_t	mount_window(t_board *board, t_game *game);
+void	delete_images(t_game *game);
+void	set_sprites(mlx_t *mlx, t_game *game);
+t_game	*set_game();
 
 #endif

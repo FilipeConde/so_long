@@ -13,7 +13,10 @@ C_FILES		= so_long.c \
 				src/map/map_has_entity.c \
 				src/map/flood_fill.c \
 				src/map/free_map.c \
-				mount_window.c
+				mount_window.c \
+				delete_images.c \
+				set_sprites.c \
+				set_game.c
 
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \
