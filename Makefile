@@ -16,7 +16,8 @@ C_FILES		= so_long.c \
 				src/graphics/mount_window.c \
 				src/graphics/delete_images.c \
 				src/graphics/set_sprites.c \
-				src/graphics/set_game.c
+				src/graphics/set_game.c \
+				src/graphics/print_board.c
 
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \

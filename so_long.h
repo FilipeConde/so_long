@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/11 19:00:25 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/11 20:24:40 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 800
+// # define WIN_WIDTH 1200
+// # define WIN_HEIGHT 1200
 # define TILE 64
 
 typedef struct s_board
@@ -58,5 +58,6 @@ int32_t	mount_window(t_board *board, t_game *game);
 void	delete_images(t_game *game);
 void	set_sprites(mlx_t *mlx, t_game *game);
 t_game	*set_game();
+void	print_board(t_board *board, t_game *game);
 
 #endif
