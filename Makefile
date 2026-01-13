@@ -1,6 +1,6 @@
 
 CC			= cc
-CFLAGS		= -g3 -Wextra -Werror -Wall -I. -Wunreachable-code #-Ofast UNCOMMENT!!!!!!!
+CFLAGS		= -g3 -Wextra -Werror -Wall -no-pie -I. -Wunreachable-code #-Ofast UNCOMMENT!!!!!!!
 LIBFT_DIR	= ./lib/libft
 LIBFT		= libft.a
 LIBMLX_DIR	= ./lib/MLX42
