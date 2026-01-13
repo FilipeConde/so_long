@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_board.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:58 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 18:11:04 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/12 23:12:36 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	free_board(t_board *board)
 {
-	int	i;
-
-	i = 0;
 	if (!board || !board->map)
 		return ((EXIT_SUCCESS));
 	free_map(board->map);

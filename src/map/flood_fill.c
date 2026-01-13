@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:50:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 16:30:05 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/12 23:12:38 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,9 @@ void	dfs_fill(char **map, int p_x, int p_y)
 
 char	**flood_fill(t_board *board)
 {
-	int	i;
 	char **map;
 
 	map = cp_map(board);
-	i = 0;
 	if (!map)
 		return (NULL);
 	dfs_fill(map, board->p_x, board->p_y);
