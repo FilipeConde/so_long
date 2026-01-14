@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mount_window.c                                     :+:      :+:    :+:   */
+/*   key_capture.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 19:52:54 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/13 23:21:44 by fconde-p         ###   ########.fr       */
+/*   Created: 2026/01/13 23:05:11 by fconde-p          #+#    #+#             */
+/*   Updated: 2026/01/13 23:22:28 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int32_t	mount_window(t_board *board, t_game *game)
+void	key_capture(mlx_key_data_t keydata, void *param)
 {
-	game->mlx = mlx_init(((int32_t)board->width * TILE),
-		((int32_t)board->height * TILE), "Test", true);
-	set_sprites(game->mlx, game);
-	print_board(board, game);
+	char	*c;
 
-	mlx_key_hook(game->mlx, &key_capture, NULL);
-
-	mlx_loop(game->mlx);
-	delete_images(game);
-	mlx_terminate(game->mlx);
-	free(game);
-	return (EXIT_SUCCESS);
+	c = param;
+	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_PRESS)
+		ft_printf("UP");
+	if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_PRESS)
+		ft_printf("DOWN");
+	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)
+		ft_printf("LEFT");
+	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
+		ft_printf("RIGHT");
 }

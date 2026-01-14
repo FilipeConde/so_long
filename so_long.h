@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/13 22:17:33 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/13 23:21:22 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,16 @@ typedef struct s_game
 	mlx_image_t	*img_w;
 }	t_game;
 
+// typedef struct mlx_key_data
+// {
+// 	keys_t			key;
+// 	action_t		action;
+// 	int32_t			os_key;
+// 	modifier_key_t	modifier;
+// }	mlx_key_data_t;
+
+typedef void (*mlx_keyfunc)(mlx_key_data_t keydata, void* param);
+
 char	**read_map(char *path);
 int		map_checker(t_board *board);
 t_board	*set_board(char *path);
@@ -56,5 +66,8 @@ void	delete_images(t_game *game);
 void	set_sprites(mlx_t *mlx, t_game *game);
 t_game	*set_game();
 void	print_board(t_board *board, t_game *game);
+void	key_capture(mlx_key_data_t keydata, void *param);
+
+void	mlx_key_hook(mlx_t* mlx, mlx_keyfunc func, void* param);
 
 #endif
