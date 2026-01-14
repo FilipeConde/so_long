@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/11 20:24:40 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/13 22:17:33 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-// # define WIN_WIDTH 1200
-// # define WIN_HEIGHT 1200
 # define TILE 64
 
 typedef struct s_board
@@ -46,7 +44,6 @@ typedef struct s_game
 	mlx_image_t	*img_w;
 }	t_game;
 
-// add functions definitions
 char	**read_map(char *path);
 int		map_checker(t_board *board);
 t_board	*set_board(char *path);
