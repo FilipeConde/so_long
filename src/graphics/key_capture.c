@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_capture.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:05:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/13 23:22:28 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/14 21:46:53 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	key_capture(mlx_key_data_t keydata, void *param)
 {
-	char	*c;
+	t_game	*game;
 
-	c = param;
+	game = (t_game *)param;
+	(void)game;
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_PRESS)
 		ft_printf("UP");
 	if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_PRESS)
@@ -25,4 +26,9 @@ void	key_capture(mlx_key_data_t keydata, void *param)
 		ft_printf("LEFT");
 	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
 		ft_printf("RIGHT");
+	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
+	{
+		ft_printf("So long!\nAnd thanks for all the skulls!\n");
+		exit(EXIT_SUCCESS);
+	}
 }
