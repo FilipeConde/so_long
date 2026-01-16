@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mount_window.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 19:52:54 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/14 21:45:40 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/15 22:30:11 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int32_t	mount_window(t_board *board, t_game *game)
 	set_sprites(game->mlx, game);
 	print_board(board, game);
 
-	mlx_key_hook(game->mlx, &key_capture, NULL);
+	mlx_key_hook(game->mlx, key_capture, game);
 
 	mlx_loop(game->mlx);
 	delete_images(game);
