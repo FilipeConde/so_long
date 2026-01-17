@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:24 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/11 17:22:28 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/17 17:32:20 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	game = set_game();
+	game->board = board;
 	mount_window(board, game);
 	free_board(board);
 	return (EXIT_SUCCESS);

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mount_window.c                                     :+:      :+:    :+:   */
+/*   update_p_pos.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 19:52:54 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/17 17:32:34 by fconde-p         ###   ########.fr       */
+/*   Created: 2026/01/17 17:35:43 by fconde-p          #+#    #+#             */
+/*   Updated: 2026/01/17 17:41:54 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int32_t	mount_window(t_board *board, t_game *game)
+void	update_p_pos(int x, int y, t_game *game)
 {
-	game->mlx = mlx_init(((int32_t)board->width * TILE),
-		((int32_t)board->height * TILE), "Test", true);
-	set_sprites(game->mlx, game);
-	print_board(board, game);
-
-	mlx_key_hook(game->mlx, key_capture, game);
-
-	mlx_loop(game->mlx);
-	delete_images(game);
-	mlx_terminate(game->mlx);
-	free(game);
-	return (EXIT_SUCCESS);
+	game->board->p_x = x;
+	game->board->p_y = y;
 }
