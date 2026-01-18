@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 16:36:32 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 17:01:39 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 17:05:41 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,6 @@ void	do_collect(t_game *game)
 
 	}
 	game->board->c_qty--;
+	if (game->board->c_qty == 0)
+		game->img_e->enabled = true;
 }
