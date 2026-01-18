@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 20:34:42 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 17:00:47 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:13:59 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	search_entities_position(t_board *board, char ent)
 	j = 0;
 	while (board->map[i])
 	{
-		while(board->map[i][j])
+		while (board->map[i][j])
 		{
 			if (board->map[i][j] == ent)
 			{
@@ -83,7 +83,7 @@ static void	count_collectables(t_board *board)
 	j = 0;
 	while (board->map[i])
 	{
-		while(board->map[i][j])
+		while (board->map[i][j])
 		{
 			if (board->map[i][j] == 'C')
 			{

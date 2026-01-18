@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:05:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 17:22:30 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:16:49 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static void	move_up(t_game *game)
 {
 	int	p_x;
 	int	p_y;
+
 	p_x = game->board->p_x;
 	p_y = game->board->p_y;
-
 	if (game->board->map[p_x - 1][p_y] == '1')
 		return ;
 	p_x--;
@@ -34,9 +34,9 @@ static void	move_down(t_game *game)
 {
 	int	p_x;
 	int	p_y;
+
 	p_x = game->board->p_x;
 	p_y = game->board->p_y;
-
 	if (game->board->map[p_x + 1][p_y] == '1')
 		return ;
 	p_x++;
@@ -52,9 +52,9 @@ static void	move_left(t_game *game)
 {
 	int	p_x;
 	int	p_y;
+
 	p_x = game->board->p_x;
 	p_y = game->board->p_y;
-
 	if (game->board->map[p_x][p_y - 1] == '1')
 		return ;
 	p_y--;
@@ -70,9 +70,9 @@ static void	move_right(t_game *game)
 {
 	int	p_x;
 	int	p_y;
+
 	p_x = game->board->p_x;
 	p_y = game->board->p_y;
-
 	if (game->board->map[p_x][p_y + 1] == '1')
 		return ;
 	p_y++;
@@ -83,7 +83,6 @@ static void	move_right(t_game *game)
 	if (game->board->map[p_x][p_y] == 'E' && game->img_e->enabled == true)
 		do_win(game);
 }
-
 
 void	key_capture(mlx_key_data_t keydata, void *param)
 {

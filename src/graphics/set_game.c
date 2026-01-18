@@ -6,13 +6,13 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 17:21:15 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/11 17:25:42 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:18:47 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_game	*set_game()
+t_game	*set_game(void)
 {
 	t_game	*game;
 

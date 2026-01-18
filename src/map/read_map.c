@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 20:10:51 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/04 14:04:52 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:11:49 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*trim_newline(char *line)
 {
-	int i;
+	int	i;
 
 	if (!line)
 		return (NULL);
@@ -24,7 +24,7 @@ static char	*trim_newline(char *line)
 		if (line[i] == '\n')
 		{
 			line[i] = '\0';
-			break;
+			break ;
 		}
 		i++;
 	}

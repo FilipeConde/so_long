@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 18:26:11 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:25:58 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include "lib/MLX42/include/MLX42/MLX42.h"
 # include "libft.h"
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
 
 # define TILE 64
 
@@ -46,16 +46,6 @@ typedef struct s_game
 	mlx_image_t	*img_w;
 }	t_game;
 
-// typedef struct mlx_key_data
-// {
-// 	keys_t			key;
-// 	action_t		action;
-// 	int32_t			os_key;
-// 	modifier_key_t	modifier;
-// }	mlx_key_data_t;
-
-typedef void (*mlx_keyfunc)(mlx_key_data_t keydata, void* param);
-
 char	**read_map(char *path);
 int		map_checker(t_board *board);
 t_board	*set_board(char *path);
@@ -66,13 +56,13 @@ int		free_map(char **map);
 int32_t	mount_window(t_board *board, t_game *game);
 void	delete_images(t_game *game);
 void	set_sprites(mlx_t *mlx, t_game *game);
-t_game	*set_game();
+t_game	*set_game(void);
 void	print_board(t_board *board, t_game *game);
 void	key_capture(mlx_key_data_t keydata, void *param);
 void	update_p_pos(int x, int y, t_game *game);
 void	do_collect(t_game *game);
 void	do_win(t_game *game);
 
-void	mlx_key_hook(mlx_t* mlx, mlx_keyfunc func, void* param);
+void	mlx_key_hook(mlx_t *mlx, mlx_keyfunc func, void *param);
 
 #endif

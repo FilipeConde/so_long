@@ -6,11 +6,12 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 17:35:43 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/17 17:41:54 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:15:06 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 void	update_p_pos(int x, int y, t_game *game)
 {
 	game->board->p_x = x;
