@@ -20,7 +20,6 @@ C_FILES		= so_long.c \
 				src/graphics/set_game.c \
 				src/graphics/print_board.c \
 				src/graphics/key_capture.c
-#				src/graphics/print_collectables.c
 
 LIBS		= $(LIBMLX_DIR)/build/$(LIBMLX) \
 				$(LIBFT_DIR)/$(LIBFT) \
