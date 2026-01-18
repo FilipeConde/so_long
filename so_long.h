@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 17:00:59 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 17:19:01 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	print_board(t_board *board, t_game *game);
 void	key_capture(mlx_key_data_t keydata, void *param);
 void	update_p_pos(int x, int y, t_game *game);
 void	do_collect(t_game *game);
+void	do_win(t_game *game);
 
 void	mlx_key_hook(mlx_t* mlx, mlx_keyfunc func, void* param);
 

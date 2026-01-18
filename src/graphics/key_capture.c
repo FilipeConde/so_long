@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:05:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 16:59:16 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 17:22:30 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,8 @@ static void	move_up(t_game *game)
 	game->img_p->instances[0].y -= TILE;
 	if (game->board->map[p_x][p_y] == 'C')
 		do_collect(game);
-	// if (next_pos == 'E' && game->board->c_qty > 0)
-	// 	return ;
-	// if (next_pos == 'E' && game->board->c_qty == 0)
-	// {
-	// 	ft_printf("You won!\n");
-	// 	exit(EXIT_SUCCESS);
-	// }
-	// if (next_pos == 'C')
-	// 	game->board->c_qty--;
+	if (game->board->map[p_x][p_y] == 'E' && game->img_e->enabled == true)
+		do_win(game);
 }
 
 static void	move_down(t_game *game)
@@ -51,6 +44,8 @@ static void	move_down(t_game *game)
 	game->img_p->instances[0].y += TILE;
 	if (game->board->map[p_x][p_y] == 'C')
 		do_collect(game);
+	if (game->board->map[p_x][p_y] == 'E' && game->img_e->enabled == true)
+		do_win(game);
 }
 
 static void	move_left(t_game *game)
@@ -67,6 +62,8 @@ static void	move_left(t_game *game)
 	game->img_p->instances[0].x -= TILE;
 	if (game->board->map[p_x][p_y] == 'C')
 		do_collect(game);
+	if (game->board->map[p_x][p_y] == 'E' && game->img_e->enabled == true)
+		do_win(game);
 }
 
 static void	move_right(t_game *game)
@@ -83,6 +80,8 @@ static void	move_right(t_game *game)
 	game->img_p->instances[0].x += TILE;
 	if (game->board->map[p_x][p_y] == 'C')
 		do_collect(game);
+	if (game->board->map[p_x][p_y] == 'E' && game->img_e->enabled == true)
+		do_win(game);
 }
 
 
@@ -102,7 +101,7 @@ void	key_capture(mlx_key_data_t keydata, void *param)
 		move_right(game);
 	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 	{
-		ft_printf("So long!\nAnd thanks for all the skulls!\n");
+		ft_printf("No problemo, better luck on next try!\n");
 		mlx_close_window(game->mlx);
 	}
 }
