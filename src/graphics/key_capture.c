@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:05:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/17 19:31:16 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 16:59:16 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	move_up(t_game *game)
 	p_x--;
 	update_p_pos(p_x, p_y, game);
 	game->img_p->instances[0].y -= TILE;
+	if (game->board->map[p_x][p_y] == 'C')
+		do_collect(game);
 	// if (next_pos == 'E' && game->board->c_qty > 0)
 	// 	return ;
 	// if (next_pos == 'E' && game->board->c_qty == 0)
@@ -47,6 +49,8 @@ static void	move_down(t_game *game)
 	p_x++;
 	update_p_pos(p_x, p_y, game);
 	game->img_p->instances[0].y += TILE;
+	if (game->board->map[p_x][p_y] == 'C')
+		do_collect(game);
 }
 
 static void	move_left(t_game *game)
@@ -61,6 +65,8 @@ static void	move_left(t_game *game)
 	p_y--;
 	update_p_pos(p_x, p_y, game);
 	game->img_p->instances[0].x -= TILE;
+	if (game->board->map[p_x][p_y] == 'C')
+		do_collect(game);
 }
 
 static void	move_right(t_game *game)
@@ -75,6 +81,8 @@ static void	move_right(t_game *game)
 	p_y++;
 	update_p_pos(p_x, p_y, game);
 	game->img_p->instances[0].x += TILE;
+	if (game->board->map[p_x][p_y] == 'C')
+		do_collect(game);
 }
 
 

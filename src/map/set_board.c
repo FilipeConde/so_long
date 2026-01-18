@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 20:34:42 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 17:20:10 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 17:00:47 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ static void	count_collectables(t_board *board)
 		i++;
 	}
 	board->c_qty = count;
+	board->c_total = count;
 }
 
 t_board	*set_board(char *path)
