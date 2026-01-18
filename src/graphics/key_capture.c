@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:05:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/17 19:23:31 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/17 19:31:16 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ static void	move_up(t_game *game)
 	p_x--;
 	update_p_pos(p_x, p_y, game);
 	game->img_p->instances[0].y -= TILE;
-	// game->board->map[p_x][p_y] = 0;
-	
-	// next_y = game->board->p_y - 1;
-	// next_x = game->board->p_x;
-	// next_pos = game->board->map[next_y][next_x];
-	// if (next_pos == '1')
-	// 	return ;
 	// if (next_pos == 'E' && game->board->c_qty > 0)
 	// 	return ;
 	// if (next_pos == 'E' && game->board->c_qty == 0)
