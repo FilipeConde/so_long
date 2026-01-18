@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:55:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 17:19:01 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 18:26:11 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_board
 typedef struct s_game
 {
 	t_board		*board;
+	int			moves;
 	mlx_t		*mlx;
 	mlx_image_t	*img_p;
 	mlx_image_t	*img_c;
