@@ -14,6 +14,7 @@ C_FILES		= so_long.c \
 				src/map/flood_fill.c \
 				src/map/free_map.c \
 				src/map/update_p_pos.c \
+				src/map/check_extention.c \
 				src/graphics/mount_window.c \
 				src/graphics/delete_images.c \
 				src/graphics/set_sprites.c \
