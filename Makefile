@@ -1,6 +1,6 @@
 
 CC			= cc
-CFLAGS		= -g3 -Wextra -Werror -Wall -no-pie -I. -Wunreachable-code #-Ofast UNCOMMENT!!!!!!!
+CFLAGS		= -g3 -Wextra -Werror -Wall -no-pie -I. -Wunreachable-code
 LIBFT_DIR	= ./lib/libft
 LIBFT		= libft.a
 LIBMLX_DIR	= ./lib/MLX42
@@ -32,7 +32,7 @@ HEADERS		= -I . \
 				-I $(LIBMLX_DIR)/include/MLX42 \
 				-I $(LIBFT_DIR)
 
-TARGETS 	= so_long
+TARGETS		= so_long
 
 all: $(TARGETS)
 
