@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:05:11 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/18 20:48:45 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:21:51 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,13 +98,13 @@ void	key_capture(mlx_key_data_t keydata, void *param)
 
 	(void)keydata;
 	game = (t_game *)param;
-	if (mlx_is_key_down(game->mlx, MLX_KEY_UP))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_W))
 		move_up(game);
-	if (mlx_is_key_down(game->mlx, MLX_KEY_DOWN))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_S))
 		move_down(game);
-	if (mlx_is_key_down(game->mlx, MLX_KEY_LEFT))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_A))
 		move_left(game);
-	if (mlx_is_key_down(game->mlx, MLX_KEY_RIGHT))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_D))
 		move_right(game);
 	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 	{
