@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/10 18:09:15 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/19 21:47:37 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,30 @@ static int	is_closed(char **map)
 	return (EXIT_SUCCESS);
 }
 
+static int	map_has_invalid_char(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == '0' || map[i][j] == '1' || map[i][j] == 'P'
+					|| map[i][j] == 'C' || map[i][j] == 'E')
+				j++;
+			else
+			{
+				return (EXIT_SUCCESS);
+			}
+		}
+		i++;
+	}
+	return (EXIT_FAILURE);
+}
+
 int	map_checker(t_board *board)
 {
 	char	**map_copy;
@@ -73,6 +97,8 @@ int	map_checker(t_board *board)
 		return (EXIT_FAILURE);
 	if (map_has_ent(board->map, 'P') != 0 || map_has_ent(board->map, 'C') != 0
 		|| map_has_ent(board->map, 'E') != 0)
+		return (EXIT_FAILURE);
+	if (map_has_invalid_char(board->map) == 0)
 		return (EXIT_FAILURE);
 	map_copy = flood_fill(board);
 	if (map_has_ent(map_copy, 'P') == 0 || map_has_ent(map_copy, 'C') == 0
