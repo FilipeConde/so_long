@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:52:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2026/01/19 21:47:37 by fconde-p         ###   ########.fr       */
+/*   Updated: 2026/01/19 21:54:02 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,7 @@ static int	map_has_invalid_char(char **map)
 					|| map[i][j] == 'C' || map[i][j] == 'E')
 				j++;
 			else
-			{
 				return (EXIT_SUCCESS);
-			}
 		}
 		i++;
 	}
